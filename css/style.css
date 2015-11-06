@@ -90,7 +90,6 @@ section .container {
 }
 
 .affix .navbar-brand img {
-  color: #282828;
   width: 38px;
   margin-top: -6px;
 }
@@ -126,7 +125,7 @@ section .container {
   background-color: transparent;
 }
 
-.navbar-nav > li > a {
+.navbar-nav>li>a {
   font-size: 10px;
   font-weight: 500;
   font-family: 'Lato', sans-serif;
@@ -164,17 +163,6 @@ section .container {
   -ms-transition: all 0.3s;
   -o-transition: all 0.3s;
   transition: all 0.3s;
-}
-
-.anchor {
-    display: block;
-    position: absolute;
-    width: 0;
-    height: 0;
-    z-index: -1;
-    top: -40px;
-    left: 0;
-    visibility: hidden;
 }
 
 /*TEXT STYLES*/
@@ -260,12 +248,6 @@ h3 .serif {
   font-size: 110%;
 }
 
-h4 .serif,
-h5 .serif,
-h6 .serif, {
-  font-size: 120%;
-}
-
 h3 small,
 h4 small,
 h5 small {
@@ -278,133 +260,6 @@ h5 small {
 
 .tabs-style-iconfall nav a span {
   -webkit-font-smoothing: subpixel-antialiased;
-}
-
-/*<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->*/
-/*<!--Decorative elements  -->*/
-/*<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->*/
-
-.inclineLine {
-  position: absolute;
-  top: 2%;
-  width: 70px;
-  height: 87px;
-  left: 45%;
-  z-index: -1;
-}
-
-.zigzagSep {
-  width: 100px;
-  height: 12px;
-  margin-top: 30px;
-  margin-bottom: 50px;
-}
-
-.sectionIntro .zigzagSep {
-  margin-bottom: 20px;
-}
-
-.lineSeparator {
-  width: 100px;
-  height: 1px;
-  background: black;
-  margin-top: 20px;
-  margin-bottom: 25px;
-}
-
-.verticallineSeparator {
-  position: relative;
-  height: 50px;
-  width: 1px;
-  background: black;
-  margin-bottom: 20px;
-}
-
-/*social icons*/
-
-#contactContent .allIconsSocialWrapper {
-  margin-top: 25px;
-  text-align: center;
-}
-
-.socialWrapper {
-  width: 50px;
-  height: 50px;
-  margin: 2px;
-  display: inline-block;
-  margin-left: auto;
-  margin-right: auto;
-  position: relative;
-}
-
-.socialIcon i {
-  color: #282828;
-  font-size: 14px;
-  padding: 15px;
-}
-
-.socialIcon {
-  display: inline-block;
-  font-size: 0px;
-  cursor: pointer;
-  margin: 10px;
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-  text-align: center;
-  position: relative;
-  z-index: 1;
-  color: white;
-}
-
-.socialIcon:after {
-  pointer-events: none;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  content: '';
-  -webkit-box-sizing: content-box;
-  -moz-box-sizing: content-box;
-  box-sizing: content-box;
-}
-
-.socialIcon-effect-1 .socialIcon {
-  background: rgba(245, 245, 245, 1);
-  -webkit-transition: background 0.2s, color 0.2s;
-  -moz-transition: background 0.2s, color 0.2s;
-  transition: background 0.2s, color 0.2s;
-}
-
-.socialIcon-effect-1 .socialIcon:after {
-  top: -4px;
-  left: -4px;
-  padding: 4px;
-  box-shadow: 0 0 0 2px #282828;
-  -webkit-transition: -webkit-transform 0.2s, opacity 0.2s;
-  -webkit-transform: scale(.9);
-  -moz-transition: -moz-transform 0.2s, opacity 0.2s;
-  -moz-transform: scale(.9);
-  -ms-transform: scale(.9);
-  transition: transform 0.2s, opacity 0.2s;
-  transform: scale(.9);
-  opacity: 0;
-}
-
-.socialWrapper:hover .socialIcon i {
-  color: white;
-}
-
-.socialWrapper:hover .socialIcon-effect-1a .socialIcon {
-  background: rgba(0, 0, 0, 1);
-}
-
-.socialWrapper:hover .socialIcon-effect-1a .socialIcon:after {
-  -webkit-transform: scale(1);
-  -moz-transform: scale(1);
-  -ms-transform: scale(1);
-  transform: scale(1);
-  opacity: 1;
 }
 
 /*<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->*/
@@ -815,21 +670,16 @@ h5 small {
   padding-top: 30px;
 }
 
-.blackBackground {
-  background: black;
-}
-
-.whiteBackground {
-  background: white;
-}
-
 .gallery {
   min-height: 500px;
 }
 
-.item .caption-heading {
-  width: 100%;
-  height: 60px;
+.verticallineSeparator {
+  position: relative;
+  height: 50px;
+  width: 1px;
+  background: black;
+  margin-bottom: 20px;
 }
 
 .caption-links {
@@ -884,19 +734,16 @@ h5 small {
 }
 
 /* ---- isotope ---- */
-/* clear fix */
 
 .gallery:after {
   content: '';
   display: block;
   clear: both;
 }
-/* 5 columns, percentage width */
 
 .gallery .gallery-inner,
 .gallery .grid-sizer {
   width: 33.333%;
-    /* change here the column width */;
 }
 
 .gallery .gallery-inner {
@@ -910,23 +757,118 @@ h5 small {
 }
 
 .galleryImage {
-    /*min-width:100%;*/
   width: 100%;
   height: auto;
 }
 
 /*<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->*/
-/*<!--Contact -->*/
+/*<!-- Social Media -->*/
 /*<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->*/
 
-#contactContent {
+#socialMedia .allIconsSocialWrapper {
+  margin-top: 25px;
+  text-align: center;
+}
+
+.socialWrapper {
+  width: 50px;
+  height: 50px;
+  margin: 2px;
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+
+.socialIcon i {
+  color: #282828;
+  font-size: 14px;
+  padding: 15px;
+}
+
+.socialIcon {
+  display: inline-block;
+  font-size: 0px;
+  cursor: pointer;
+  margin: 10px;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  color: white;
+}
+
+.socialIcon:after {
+  pointer-events: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  content: '';
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+.socialIcon-effect-1 .socialIcon {
+  background: rgba(245, 245, 245, 1);
+  -webkit-transition: background 0.2s, color 0.2s;
+  -moz-transition: background 0.2s, color 0.2s;
+  transition: background 0.2s, color 0.2s;
+}
+
+.socialIcon-effect-1 .socialIcon:after {
+  top: -4px;
+  left: -4px;
+  padding: 4px;
+  box-shadow: 0 0 0 2px #282828;
+  -webkit-transition: -webkit-transform 0.2s, opacity 0.2s;
+  -webkit-transform: scale(.9);
+  -moz-transition: -moz-transform 0.2s, opacity 0.2s;
+  -moz-transform: scale(.9);
+  -ms-transform: scale(.9);
+  transition: transform 0.2s, opacity 0.2s;
+  transform: scale(.9);
+  opacity: 0;
+}
+
+.socialWrapper:hover .socialIcon i {
+  color: white;
+}
+
+.socialWrapper:hover .socialIcon-effect-1a .socialIcon {
+  background: rgba(0, 0, 0, 1);
+}
+
+.socialWrapper:hover .socialIcon-effect-1a .socialIcon:after {
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  opacity: 1;
+}
+
+#socialMedia {
   background: white;
 }
 
-#contactContent .container {
+#socialMedia .container {
   padding-top: 40px;
 }
 
-#contactContent .btn {
+#socialMedia .btn {
   margin-top: 20px;
+}
+
+/*<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->*/
+/*<!-- citing sources -->*/
+/*<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->*/
+
+#cite .container{
+  padding: 0;
+}
+#cite p {
+  color: #d5d5d5;
 }
