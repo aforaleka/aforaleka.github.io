@@ -824,7 +824,6 @@ h5 small {
 }
 
 .gallery {
-  background: #4c4c4c;
   min-height: 500px;
 }
 
@@ -882,15 +881,6 @@ h5 small {
   background: #282828;
   margin-top: 5px;
   margin-bottom: 5px;
-}
-
-.gallery {
-  background: #4c4c4c;
-  min-height: 500px;
-}
-
-#portfolio .container .gallery {
-  background-color: white;
 }
 
 /* ---- isotope ---- */
