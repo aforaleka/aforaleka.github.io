@@ -3,12 +3,11 @@ body {
   width: 100%;
   height: 100%;
   padding: 0;
-  margin-left: 0;
-  margin-right: 0;
+  margin: 0;
 }
 
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-weight: 300;
 }
 
@@ -32,9 +31,7 @@ img {
   -moz-user-select: none;
   -webkit-user-select: none;
   -ms-user-select: none;
-  user-select: none;
   -webkit-user-drag: none;
-  user-drag: none;
 }
 
 section {
@@ -48,8 +45,7 @@ section {
 }
 
 section .container {
-  padding-top: 110px;
-  padding-bottom: 110px;
+  padding: 110px 0;
 }
 
 .row {
@@ -65,11 +61,11 @@ section .container {
   padding-right: 50px;
   background-color: transparent;
   border-color: transparent;
-  -webkit-transition: all .5s ease .25s;
-  transition: all .5s ease .25s;
+  -webkit-transition: all 0.5s ease 0.25s;
+  transition: all 0.5s ease 0.25s;
 }
 
-.navbar-default .navbar-brand img {
+.logo {
   color: black;
   width: 40px;
   margin-top: -10px;
@@ -128,7 +124,7 @@ section .container {
 .navbar-nav>li>a {
   font-size: 10px;
   font-weight: 500;
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   text-transform: uppercase;
   color: #d5d5d5;
   letter-spacing: 2px;
@@ -175,17 +171,17 @@ h5,
 h6 {
   letter-spacing: -0.5px;
   -webkit-font-smoothing: antialiased;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-weight: 800;
 }
 
 h2 {
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   font-weight: 500;
 }
 
 p {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-weight: 300;
   font-size: 14px;
   line-height: 24px;
@@ -193,7 +189,7 @@ p {
 }
 
 .minimal {
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
   font-weight: 500;
   text-transform: uppercase;
 }
@@ -236,7 +232,7 @@ p.bold {
 }
 
 .serif {
-  font-family: 'Old Standard TT', serif;
+  font-family: "Old Standard TT", serif;
   text-transform: none;
   font-style: italic;
   font-weight: 300;
@@ -273,7 +269,7 @@ h5 small {
 
 #intro h1 {
     text-transform: uppercase;
-    font-family: 'Raleway', sans-serif;
+    font-family: "Raleway", sans-serif;
     font-weight: 300;
     font-size: 56px;
 }
@@ -286,7 +282,6 @@ h5 small {
 }
 
 #intro h2 small {
-    font-style: none;
     letter-spacing: inherit;
     color: black;
     font-size: 40px;
@@ -476,14 +471,14 @@ h5 small {
   margin: 0;
   padding: 0.75em 0;
   color: black;
-  font-family: 'Old Standard TT', serif;
+  font-family: "Old Standard TT", serif;
 }
 
 .content-wrap section p.minimal {
   margin: 0;
   padding: 0.75em 0;
   color: black;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-weight: 300;
   text-transform: none;
 }
@@ -540,7 +535,7 @@ h5 small {
   text-transform: uppercase;
   letter-spacing: 4px;
   font-size: 18px;
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
 }
 
 .tabs-style-iconfall nav li::before {
@@ -549,7 +544,7 @@ h5 small {
   width: 40px;
   height: 2px;
   background: black;
-  content: '';
+  content: "";
   opacity: 0;
   -webkit-transition: -webkit-transform 0.2s ease-in;
   transition: transform 0.2s ease-in;
@@ -598,6 +593,7 @@ h5 small {
 }
 
 #portfolio {
+  padding-top: 20px;
   background-color: white;
 }
 
@@ -615,7 +611,7 @@ h5 small {
   border-radius: 0;
   border: 0;
   margin: 20px;
-  margin-top: 0px;
+  margin-top: 0;
 }
 
 #filters .btn {
@@ -629,12 +625,11 @@ h5 small {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
-  user-select: none;
   background-image: none;
   border: 0 solid transparent;
   border-radius: 0;
   font-weight: 900;
-  font: 12px/24px 'Raleway', sans-serif;
+  font: 12px/24px "Raleway", sans-serif;
   text-transform: uppercase;
   letter-spacing: 3px;
   color: #999;
@@ -654,7 +649,7 @@ h5 small {
 }
 
 .activeFilter h3.minimal:first-child {
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
   text-transform: uppercase;
   font-style: normal;
   font-size: 30px;
@@ -714,7 +709,7 @@ h5 small {
   font-size: 1.4em;
   line-height: 1.4em;
   margin-bottom: 0;
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
   font-weight: 900;
   color: #282828;
   text-transform: uppercase;
@@ -736,7 +731,7 @@ h5 small {
 /* ---- isotope ---- */
 
 .gallery:after {
-  content: '';
+  content: "";
   display: block;
   clear: both;
 }
@@ -801,12 +796,11 @@ h5 small {
 }
 
 .socialIcon:after {
-  pointer-events: none;
   position: absolute;
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  content: '';
+  content: "";
   -webkit-box-sizing: content-box;
   -moz-box-sizing: content-box;
   box-sizing: content-box;
@@ -860,15 +854,4 @@ h5 small {
 
 #socialMedia .btn {
   margin-top: 20px;
-}
-
-/*<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->*/
-/*<!-- citing sources -->*/
-/*<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->*/
-
-#cite .container{
-  padding: 0;
-}
-#cite p {
-  color: #d5d5d5;
 }
