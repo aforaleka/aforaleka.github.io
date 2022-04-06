@@ -1,17 +1,8 @@
-# personal bio
-Made with three.js :)
+Made with three.js -- relevant code in src/Experience/
 
-## Setup
-Download [Node.js](https://nodejs.org/en/download/).
-Run this followed commands:
-
+To run:
 ``` bash
-# Install dependencies (only the first time)
 npm install
-
-# Run the local server at localhost:8080
 npm run dev
-
-# Build for production in the dist/ directory
 npm run build
 ```
