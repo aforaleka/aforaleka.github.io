@@ -1,8 +1,7 @@
-Made with three.js -- relevant code in src/Experience/
+Made with love + react-three-fiber 
 
 To run:
 ``` bash
-npm install
-npm run dev
-npm run build
+npm i
+npm start
 ```
