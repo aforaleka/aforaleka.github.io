@@ -10,7 +10,7 @@
 
 html,
 body,
-main {
+#root {
   height: 100%;
   box-sizing: border-box;
   overflow: hidden;
@@ -32,35 +32,10 @@ body {
 a:link,
 a:visited {
   text-decoration: none;
-  border: none;
   color: var(--color-text);
   transition: all 0.5s ease;
 }
 
-.text a {
-  border-bottom: 2px solid var(--color-text-underline);
-}
-
 a:hover {
   color: var(--color-hover);
-}
-
-.wrapper {
-  cursor: default;
-  height: 100%;
-  max-width: 550px;
-  min-width: 330px;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  flex-direction: column;
-  padding: 0 2em;
-  margin: 0 auto;
-  z-index: 2;
-}
-
-.content {
-  display: flex;
-  flex-direction: column;
-  z-index: 2;
 }

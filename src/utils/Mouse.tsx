@@ -46,11 +46,11 @@ export default class Mouse {
         e.preventDefault()
     }
 
-    onMouseDown(e: MouseEvent) {
+    onMouseDown() {
         document.body.style.cursor = 'grabbing'
     }
 
-    onMouseUp(e: MouseEvent) {
+    onMouseUp() {
         document.body.style.cursor = 'grab'
     }
 

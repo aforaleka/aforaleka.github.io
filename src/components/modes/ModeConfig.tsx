@@ -13,6 +13,7 @@ export type ModeConfig = {
     icon: string,
     blob: BlobConfig,
     canvasGl: Object,
+    bionic: { fontWeight: number }
 }
 
 export const ModeMapping: { [key in ModeOption]: ModeConfig } = {
@@ -29,6 +30,9 @@ export const ModeMapping: { [key in ModeOption]: ModeConfig } = {
             minBeta: 0.8,
             maxBeta: 20.,
         },
+        bionic: {
+            fontWeight: 400
+        }
     },
     zen: {
         icon: '🍃',
@@ -43,5 +47,8 @@ export const ModeMapping: { [key in ModeOption]: ModeConfig } = {
             minBeta: 0.,
             maxBeta: 4.,
         },
+        bionic: {
+            fontWeight: 800
+        }
     },
 }

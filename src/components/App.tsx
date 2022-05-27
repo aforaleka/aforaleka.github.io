@@ -13,8 +13,7 @@ import { ModeMapping, ModeOption, ModeOptions } from './modes/ModeConfig';
 
 
 const App: React.VFC = () => {
-	const mode = React.useContext(ModeContext) as ModeOption;
-
+	const mode = React.useContext(ModeContext) as ModeOption
 	return (
 		<FullScreen>
 			{mode === ModeOptions.trippy ? <TripModeCanvas /> : <ZenModeCanvas />}
@@ -24,14 +23,14 @@ const App: React.VFC = () => {
 
 const TripModeCanvas = () => {
 	const orbitControlsRef = React.useRef(null!)
-	const modeConfig = ModeMapping[ModeOptions.trippy as ModeOption]
+	const { canvasGl, blob } = ModeMapping[ModeOptions.trippy as ModeOption]
 	return (
 		<Canvas
 			dpr={Math.min(window.devicePixelRatio, 2)}
 			camera={{ position: [0, 0, 8], fov: 50, near: 0.01, far: 50 }}
-			gl={modeConfig.canvasGl}>
+			gl={canvasGl}>
 			<React.Suspense fallback={null}>
-				<Blob blobConfig={modeConfig.blob} />
+				<Blob blobConfig={blob} />
 				<Stars radius={1} depth={8} count={880} factor={1} fade />
 				<EffectComposer>
 					<ChromaticAberration />
@@ -53,24 +52,15 @@ const TripModeCanvas = () => {
 }
 
 const ZenModeCanvas = () => {
-	const modeConfig = ModeMapping[ModeOptions.zen as ModeOption]
+	const { canvasGl, blob } = ModeMapping[ModeOptions.zen as ModeOption]
 	return (
 		<Canvas
 			dpr={Math.min(window.devicePixelRatio, 2)}
 			camera={{ position: [0, 0, 8], fov: 50, near: 0.01, far: 50 }}
-			gl={modeConfig.canvasGl}>
+			gl={canvasGl}>
 			<React.Suspense fallback={null}>
-				<Blob blobConfig={modeConfig.blob} />
+				<Blob blobConfig={blob} />
 			</React.Suspense>
-			<OrbitControls
-				minDistance={4}
-				maxDistance={12}
-				minAzimuthAngle={- Math.PI * 0.1}
-				maxAzimuthAngle={Math.PI * 0.1}
-				minPolarAngle={Math.PI * 0.48}
-				maxPolarAngle={Math.PI * 0.52}
-				enableDamping
-			/>
 			<StatsPanel />
 		</Canvas>
 	)
