@@ -10,7 +10,7 @@ const PROJECT_LINKS = {
 };
 
 const OTHER_LINKS = {
-  resume: "./latest-resume.pdf",
+  resume: "./aleka_cheung_resume_latest.pdf",
   github: "https://github.com/aforaleka",
   linkedin: "https://www.linkedin.com/in/alekacheung/",
   spotify: "https://open.spotify.com/user/aleka.",
