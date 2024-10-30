@@ -1,0 +1,2 @@
+:root{--font-family:"Inconsolata",monospace;--color-text:#fff;--color-text-underline:hsla(0,0%,100%,.5)}#root,body,html{box-sizing:border-box;height:100%;overflow:hidden}body{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;cursor:default;font-family:Inconsolata,monospace;font-family:var(--font-family);font-size:1rem;line-height:1.5;margin:0 0 1rem;text-align:left}a:link,a:visited,body{color:#fff;color:var(--color-text)}a:link,a:visited{text-decoration:none;transition:all .3s ease}a:hover{opacity:.3}
+/*# sourceMappingURL=main.77491d8f.css.map*/
