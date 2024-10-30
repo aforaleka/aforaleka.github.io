@@ -20,8 +20,6 @@ export default class Mouse {
         window.addEventListener('scroll', this.onScroll.bind(this), false)
         window.addEventListener('mousemove', this.onMouseMove.bind(this), false)
         window.addEventListener('touchmove', this.onTouchMove.bind(this), false)
-        window.addEventListener('mousedown', this.onMouseDown.bind(this), false)
-        window.addEventListener('mouseup', this.onMouseUp.bind(this), false)
     }
 
     onScroll() {
@@ -44,14 +42,6 @@ export default class Mouse {
         this.lastY = e.pageY
 
         e.preventDefault()
-    }
-
-    onMouseDown() {
-        document.body.style.cursor = 'grabbing'
-    }
-
-    onMouseUp() {
-        document.body.style.cursor = 'grab'
     }
 
     onTouchMove(e: TouchEvent) {

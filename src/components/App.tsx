@@ -1,78 +1,90 @@
-import React from 'react';
+import React from "react";
 
-import styled from 'styled-components'
+import styled from "styled-components";
 
-import { CameraShake, OrbitControls, Stars } from '@react-three/drei'
-import { Canvas } from '@react-three/fiber';
-import { EffectComposer, ChromaticAberration } from '@react-three/postprocessing'
+import { Canvas } from "@react-three/fiber";
 
-import { ModeContext } from '..';
-import Blob from './blob/Blob';
-import StatsPanel from './StatsPanel';
-import { ModeMapping, ModeOption, ModeOptions } from './modes/ModeConfig';
-
+import Blob from "./blob/Blob";
+import StatsPanel from "./StatsPanel";
 
 const App: React.VFC = () => {
-	const mode = React.useContext(ModeContext) as ModeOption
-	return (
-		<FullScreen>
-			{mode === ModeOptions.trippy ? <TripModeCanvas /> : <ZenModeCanvas />}
-		</FullScreen>
-	)
-}
+  return (
+    <Container>
+      <Glow />
+      <Canvas
+        dpr={Math.min(window.devicePixelRatio, 2)}
+        camera={{ position: [0, 0, 8], fov: 50, near: 0.01, far: 50 }}
+        gl={{ antialias: true, alpha: true, depth: true, stencil: true }}
+      >
+        <React.Suspense fallback={null}>
+          <Blob />
+        </React.Suspense>
+        <StatsPanel />
+      </Canvas>
+    </Container>
+  );
+};
 
-const TripModeCanvas = () => {
-	const orbitControlsRef = React.useRef(null!)
-	const { canvasGl, blob } = ModeMapping[ModeOptions.trippy as ModeOption]
-	return (
-		<Canvas
-			dpr={Math.min(window.devicePixelRatio, 2)}
-			camera={{ position: [0, 0, 8], fov: 50, near: 0.01, far: 50 }}
-			gl={canvasGl}>
-			<React.Suspense fallback={null}>
-				<Blob blobConfig={blob} />
-				<Stars radius={1} depth={8} count={880} factor={1} fade />
-				<EffectComposer>
-					<ChromaticAberration />
-				</EffectComposer>
-			</React.Suspense>
-			<OrbitControls
-				ref={orbitControlsRef}
-				minDistance={4}
-				maxDistance={12}
-				minAzimuthAngle={- Math.PI * 0.1}
-				maxAzimuthAngle={Math.PI * 0.1}
-				minPolarAngle={Math.PI * 0.48}
-				maxPolarAngle={Math.PI * 0.52}
-				enableDamping
-			/>
-			<CameraShake maxYaw={0.05} maxPitch={0.05} maxRoll={0.1} controls={orbitControlsRef} />
-			<StatsPanel />
-		</Canvas>)
-}
+const Container = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  outline: none;
 
-const ZenModeCanvas = () => {
-	const { canvasGl, blob } = ModeMapping[ModeOptions.zen as ModeOption]
-	return (
-		<Canvas
-			dpr={Math.min(window.devicePixelRatio, 2)}
-			camera={{ position: [0, 0, 8], fov: 50, near: 0.01, far: 50 }}
-			gl={canvasGl}>
-			<React.Suspense fallback={null}>
-				<Blob blobConfig={blob} />
-			</React.Suspense>
-			<StatsPanel />
-		</Canvas>
-	)
-}
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
 
-const FullScreen = styled.div`
-	position: fixed;
-	top: 0;
-	left: 0;
-	outline: none;
-	width: 100%;
-	height: 100%;
-`
+  animation: animatedJamesTurrell 30s infinite;
+`;
 
-export default App
+const Glow = styled.div`
+  position: absolute;
+  border-radius: 10vw;
+  -webkit-filter: blur(100px);
+  -moz-filter: blur(100px);
+  -o-filter: blur(100px);
+  -ms-filter: blur(100px);
+  filter: blur(100px);
+  width: 60vw;
+  height: 60vh;
+
+  animation: animatedJamesTurrell 15s infinite;
+
+  @keyframes animatedJamesTurrell {
+    0% {
+      background: #ff817b;
+    }
+    12% {
+      background: #c1ae00;
+    }
+    24% {
+      background: #f64793;
+    }
+    36% {
+      background: #a166ab;
+    }
+    48% {
+      background: #767cee;
+    }
+    60% {
+      background: #4ca4db;
+    }
+    72% {
+      background: #0ce4db;
+    }
+    84% {
+      background: #6e8301;
+    }
+    96% {
+      background: #d17327;
+    }
+    100% {
+      background: #ff817b;
+    }
+  }
+`;
+
+export default App;
