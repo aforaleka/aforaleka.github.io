@@ -9,7 +9,8 @@ const PROJECT_LINKS = {
   Messenger: "https://www.messenger.com/features",
 };
 
-const SOCIAL_LINKS = {
+const OTHER_LINKS = {
+  resume: "./latest-resume.pdf",
   github: "https://github.com/aforaleka",
   linkedin: "https://www.linkedin.com/in/alekacheung/",
   spotify: "https://open.spotify.com/user/aleka.",
@@ -17,7 +18,7 @@ const SOCIAL_LINKS = {
   email: "mailto:alekacheung@gmail.com",
 };
 
-type Social = keyof typeof SOCIAL_LINKS;
+type OtherLink = keyof typeof OTHER_LINKS;
 
 const Content: React.VFC = () => {
   const getProjectLink = (project: keyof typeof PROJECT_LINKS) => (
@@ -26,9 +27,9 @@ const Content: React.VFC = () => {
     </ProjectLink>
   );
 
-  const getSocialLink = (social: Social) => (
-    <a href={SOCIAL_LINKS[social]} target="_blank" rel="noreferrer">
-      {social}
+  const getOtherLink = (link: OtherLink) => (
+    <a href={OTHER_LINKS[link]} target="_blank" rel="noreferrer">
+      {link}
     </a>
   );
 
@@ -49,14 +50,13 @@ const Content: React.VFC = () => {
         </p>
       </Section>
 
-      <SocialSection>
+      <OtherSection>
         <div>
-          <span>Find me on: </span>
-          {Object.keys(SOCIAL_LINKS).map((value) =>
-            getSocialLink(value as Social)
+          {Object.keys(OTHER_LINKS).map((value) =>
+            getOtherLink(value as OtherLink)
           )}
           </div>
-      </SocialSection>
+      </OtherSection>
     </Wrapper>
   );
 };
@@ -84,9 +84,9 @@ const ProjectLink = styled.a`
   border-bottom: 2px solid var(--color-text-underline);
 `;
 
-const SocialSection = styled(Section)`
+const OtherSection = styled(Section)`
   a:not(:first-of-type)::before {
-    content: " // ";
+    content: " · ";
   }
 `;
 
