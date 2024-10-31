@@ -52,6 +52,7 @@ const Content: React.VFC = () => {
 
       <OtherSection>
         <div>
+          see my
           {Object.keys(OTHER_LINKS).map((value) =>
             getOtherLink(value as OtherLink)
           )}
@@ -85,7 +86,7 @@ const ProjectLink = styled.a`
 `;
 
 const OtherSection = styled(Section)`
-  a:not(:first-of-type)::before {
+  a::before {
     content: " · ";
   }
 `;

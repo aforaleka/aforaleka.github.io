@@ -2,26 +2,40 @@ import React from "react";
 
 import styled from "styled-components";
 
+import { OrbitControls} from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 
 import Blob from "./blob/Blob";
-import StatsPanel from "./StatsPanel";
+import StatsPanel from "./StatsPanel"
 
 const App: React.VFC = () => {
   return (
     <Container>
+      <BlobCanvas />
       <Glow />
-      <Canvas
-        dpr={Math.min(window.devicePixelRatio, 2)}
-        camera={{ position: [0, 0, 8], fov: 50, near: 0.01, far: 50 }}
-        gl={{ antialias: true, alpha: true, depth: true, stencil: true }}
-      >
-        <React.Suspense fallback={null}>
-          <Blob />
-        </React.Suspense>
-        <StatsPanel />
-      </Canvas>
     </Container>
+  );
+};
+
+const BlobCanvas = () => {
+  const orbitControlsRef = React.useRef(null!);
+  return (
+    <Canvas
+      dpr={Math.min(window.devicePixelRatio, 2)}
+      camera={{ position: [0, 0, 8], fov: 50, near: 0.01, far: 50 }}
+      gl={{ antialias: true, alpha: true, depth: true, stencil: true }}
+    >
+      <React.Suspense fallback={null}>
+        <Blob />
+      </React.Suspense>
+      <OrbitControls
+        ref={orbitControlsRef}
+        minDistance={4}
+        maxDistance={12}
+        enableDamping
+      />
+      <StatsPanel />
+    </Canvas>
   );
 };
 
