@@ -73,6 +73,7 @@ const Wrapper = styled.div`
   padding: 0 2rem;
   margin: 0 auto;
   z-index: 2;
+  pointer-events: none;
 `;
 
 const Section = styled.div`

@@ -56,6 +56,7 @@ const Container = styled.div`
 
 const Glow = styled.div`
   position: absolute;
+  pointer-events: none;
   border-radius: 10vw;
   -webkit-filter: blur(100px);
   -moz-filter: blur(100px);
