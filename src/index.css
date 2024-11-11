@@ -1,5 +1,5 @@
 :root {
-  --font-family: "Inconsolata", monospace;
+  --font-family: Times New Roman, serif;
   --color-text: #ffffff;
   --color-text-underline: rgba(255, 255, 255, 0.5);
 }
@@ -16,9 +16,7 @@ body {
   cursor: default;
   font-family: var(--font-family);
   text-align: left;
-  margin: 0 0 1rem 0;
-  line-height: 1.5;
-  font-size: 1rem;
+  margin: 0;
   color: var(--color-text);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -34,4 +32,43 @@ a:visited {
 
 a:hover {
   opacity: 0.3;
+}
+
+b {
+  font-weight: 600;
+  font-style: italic;
+}
+
+
+@keyframes animatedJamesTurrell {
+  0% {
+    background: #ff817b;
+  }
+  12% {
+    background: #c1ae00;
+  }
+  24% {
+    background: #f64793;
+  }
+  36% {
+    background: #a166ab;
+  }
+  48% {
+    background: #767cee;
+  }
+  60% {
+    background: #4ca4db;
+  }
+  72% {
+    background: #0ce4db;
+  }
+  84% {
+    background: #6e8301;
+  }
+  96% {
+    background: #d17327;
+  }
+  100% {
+    background: #ff817b;
+  }
 }

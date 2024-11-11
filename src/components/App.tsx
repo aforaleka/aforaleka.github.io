@@ -51,7 +51,7 @@ const Container = styled.div`
   width: 100vw;
   height: 100vh;
 
-  animation: animatedJamesTurrell 30s infinite;
+  animation: animatedJamesTurrell 90s infinite;
 `;
 
 const Glow = styled.div`
@@ -66,40 +66,7 @@ const Glow = styled.div`
   width: 60vw;
   height: 60vh;
 
-  animation: animatedJamesTurrell 15s infinite;
-
-  @keyframes animatedJamesTurrell {
-    0% {
-      background: #ff817b;
-    }
-    12% {
-      background: #c1ae00;
-    }
-    24% {
-      background: #f64793;
-    }
-    36% {
-      background: #a166ab;
-    }
-    48% {
-      background: #767cee;
-    }
-    60% {
-      background: #4ca4db;
-    }
-    72% {
-      background: #0ce4db;
-    }
-    84% {
-      background: #6e8301;
-    }
-    96% {
-      background: #d17327;
-    }
-    100% {
-      background: #ff817b;
-    }
-  }
+  animation: animatedJamesTurrell 45s infinite;
 `;
 
 export default App;

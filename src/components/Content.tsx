@@ -14,11 +14,9 @@ const OTHER_LINKS = {
   github: "https://github.com/aforaleka",
   linkedin: "https://www.linkedin.com/in/alekacheung/",
   spotify: "https://open.spotify.com/user/aleka.",
-  ig: "https://www.instagram.com/____aleka/",
+  instagram: "https://www.instagram.com/____aleka/",
   email: "mailto:alekacheung@gmail.com",
 };
-
-type OtherLink = keyof typeof OTHER_LINKS;
 
 const Content: React.VFC = () => {
   const getProjectLink = (project: keyof typeof PROJECT_LINKS) => (
@@ -27,17 +25,19 @@ const Content: React.VFC = () => {
     </ProjectLink>
   );
 
-  const getOtherLink = (link: OtherLink) => (
-    <a href={OTHER_LINKS[link]} target="_blank" rel="noreferrer">
-      {link}
-    </a>
-  );
+  const getOtherLinks = () =>
+    Object.entries(OTHER_LINKS).map(([key, link]) => (
+      <a href={link} target="_blank" rel="noreferrer">
+        {key}
+      </a>
+    ));
 
   return (
     <Wrapper>
       <Section>
         <p>
-          Hello hello, I'm <b>Aleka Cheung</b>.
+          Hello hello, I'm
+          <Name>Aleka Cheung</Name>
         </p>
         <p>
           <b>Frontend engineer</b> & yogi based in nyc. Love good design,
@@ -49,14 +49,8 @@ const Content: React.VFC = () => {
           opportunities!
         </p>
       </Section>
-
       <OtherSection>
-        <div>
-          see my
-          {Object.keys(OTHER_LINKS).map((value) =>
-            getOtherLink(value as OtherLink)
-          )}
-          </div>
+        <div>see my {getOtherLinks()}</div>
       </OtherSection>
     </Wrapper>
   );
@@ -82,8 +76,23 @@ const Section = styled.div`
   z-index: 2;
 `;
 
+const Name = styled.h1`
+  font-size: 4rem;
+  letter-spacing: -2px;
+  font-weight: 500;
+  line-height: 0.5;
+
+  -webkit-transform: scale(1, 1.1);
+  -moz-transform: scale(1, 1.1);
+  -ms-transform: scale(1, 1.1);
+  -o-transform: scale(1, 1.1);
+  transform: scale(1, 1.1);
+  transform-origin: 0 0;
+  margin-bottom: 0.5rem;
+`;
+
 const ProjectLink = styled.a`
-  border-bottom: 2px solid var(--color-text-underline);
+  border-bottom: 1px solid var(--color-text-underline);
 `;
 
 const OtherSection = styled(Section)`
