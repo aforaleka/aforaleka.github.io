@@ -1,16 +1,16 @@
 import React from "react";
 
-import "./index.css";
 import { render } from "react-dom";
 
-import App from "./components/App";
-import Content from "./components/Content";
+import "./index.css";
+import { Frames } from "./components/FramesLayer";
 
-const Wrapped: React.VFC = () => (
-  <>
-    <Content />
-    <App />
-  </>
-);
+const Root: React.VFC = () => {
+  return (
+    <div className="full-screen">
+      <Frames />
+    </div>
+  );
+};
 
-render(<Wrapped />, document.getElementById("root"));
+render(<Root />, document.getElementById("root"));
