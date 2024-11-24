@@ -20,7 +20,7 @@ const Blob = () => {
       uTime: { value: 0 },
       uMouse: { value: 0 },
       uTexture: { value: canvas.texture },
-      uBrightness: { value: 0.2 },
+      uBrightness: { value: 0.8 },
     },
     vertexShader,
     fragmentShader,
@@ -43,10 +43,7 @@ const Blob = () => {
     trackedMouse.speed *= 0.98;
 
     shaderRef.current.uniforms.uTime.value = time;
-    shaderRef.current.uniforms.uMouse.value = Math.min(
-      Math.max(beta, 0),
-      3
-    );
+    shaderRef.current.uniforms.uMouse.value = Math.min(Math.max(beta, 0), 3);
 
     const target = new THREE.Vector3();
     target.x += mouse.x - target.x;
@@ -59,13 +56,12 @@ const Blob = () => {
     <mesh visible position={meshP} ref={meshRef}>
       <sphereGeometry
         attach="geometry"
-        args={[window.innerWidth <= 768 ? 1 : 2, 144, 144]}
+        args={[1, 128, 128]}
       />
       <shaderMaterial
         attach="material"
         ref={shaderRef}
         args={[shader]}
-        side={THREE.FrontSide}
         wireframe
       />
     </mesh>
